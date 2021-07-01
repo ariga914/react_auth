@@ -23,7 +23,7 @@ const Navigation = () => {
                         <NavLink activeClassName={classes.active} to="/signup">Signup</NavLink>
                     </li>
                 }
-                {/protect profile page against not loggedin user/}
+                {/** protect profile page against not loggedin user*/}
                 {authContext.isLoggedIn &&
                     <li>
                         <NavLink activeClassName={classes.active} to="/profile">
@@ -51,7 +51,7 @@ const Navigation = () => {
                         </NavLink>
                     </li>
                 }
-                {/** Link to password change form
+                {/** Link to change form
                  *   Protect against not loggedin user
                  */}
                 {authContext.isLoggedIn &&

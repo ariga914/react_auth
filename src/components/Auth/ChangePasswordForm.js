@@ -11,16 +11,16 @@ import axios from "axios";
 const ChangePasswordForm = () => {
     {/**form state to check if data can be send*/}
     const [isFormValid, setIsFormValid] = useState(false);
-    [/**form state in order to hide after update password successfully */]
+    {/**form state in order to hide after update password successfully */}
     const [isShowForm, setShowForm] = useState(true);
-    [/**to store error message */]
+    {/**to store error message */}
     const [message, setMessage] = useState(null);
     
     const authCtx = useContext(AuthContext);
-    [/**variable to store token string for authenticated user */]
+    {/**variable to store token string for authenticated user */}
     const token = authCtx.token;
 
-    [/**store value in password input */]
+    {/**store value in password input */}
     const passwordInput = useRef();
 
     {/**check if password input is longer than 8 characters  */}

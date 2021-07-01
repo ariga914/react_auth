@@ -8,14 +8,14 @@ import AuthContext from "../Store/AuthContext";
 import classes from "./TodoList.module.css";
 
 const TodoList = () => {
-    [/**to store got todoList from API server */]
+    {/**to store got todoList from API server */}
     const [todos, setTodos] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    [/**to store error message */]
+    {/**to store error message */}
     const [message, setMessage] = useState(null);
     
     const ctxAuth = useContext(AuthContext);
-    [/**variable to store token string for authenticated user */]
+    {/**variable to store token string for authenticated user */}
     const token = ctxAuth.token;
 
     const getAPI = "http://localhost:5151/todos";
