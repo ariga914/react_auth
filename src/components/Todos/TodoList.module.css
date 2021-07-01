@@ -1,0 +1,27 @@
+.todos-list {
+    list-style: none;
+    width: 90%;
+    max-width: 60rem;
+    padding: 2rem;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.todo {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #00dbde;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+}
+
+.todo h2 {
+    font-size: 1.5rem;
+    color: rgb(72, 70, 70);
+}
+
+.todo p {
+    font-size: 1rem;
+}
