@@ -1,6 +1,8 @@
 import ChangePasswordForm from "../components/Auth/ChangePasswordForm";
 
-{/**return ChangePasswordForm component */}
+{
+    /**return ChangePasswordForm component */
+}
 function ChangePasswordPage() {
     return <ChangePasswordForm />;
 }

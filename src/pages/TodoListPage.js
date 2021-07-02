@@ -1,6 +1,8 @@
 import TodoList from "../components/Todos/TodoList";
 
-{/**return TodoList component */}
+{
+    /**return TodoList component */
+}
 function TodoListPage() {
     return <TodoList />;
 }
