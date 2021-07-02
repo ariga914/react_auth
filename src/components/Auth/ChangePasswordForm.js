@@ -7,6 +7,8 @@ import React, {
     useContext,
 } from "react";
 
+import { useHistory } from "react-router";
+
 import Card from "../UI/Card/Card";
 import classes from "./Auth.module.css";
 import Button from "../UI/Button/Button";
@@ -15,6 +17,7 @@ import AuthContext from "../Store/AuthContext";
 import axios from "axios";
 
 const ChangePasswordForm = () => {
+    const history = useHistory();
     {
         /**form state to check if data can be send*/
     }
@@ -66,7 +69,7 @@ const ChangePasswordForm = () => {
                 {
                     headers: {
                         "Content-Type": "application/json",
-                        Authorization: token,
+                        Authorization: "123456",
                     },
                 }
             )
@@ -76,8 +79,10 @@ const ChangePasswordForm = () => {
                 }
                 if (response.status === 200) {
                     setMessage("Change password successfully");
+                    setShowForm(false);
                     return;
                 }
+
                 {
                     /**if status code is another one, show message to tell update password failed */
                 }
@@ -87,17 +92,20 @@ const ChangePasswordForm = () => {
                 {
                     /**store some error message */
                 }
+                if (error.response) {
+                    if (error.response.status === 401) {
+                        authCtx.logout();
+                        history.push("/login");
+                    }
+                }
                 setMessage(error.message);
-            })
-            .then(() => {
-                setShowForm(false);
             });
     };
 
     return (
         <Fragment>
             <Card className={classes.auth}>
-                {message != null && <p className={classes.error}>{message}</p>}
+                {message && <p className={classes.error}>{message}</p>}
                 {isShowForm && (
                     <form onSubmit={submitHandler}>
                         <div className={classes.control}>

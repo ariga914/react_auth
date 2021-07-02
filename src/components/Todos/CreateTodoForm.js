@@ -142,7 +142,7 @@ function CreateTodoForm() {
             .post(createAPI, newTodo, {
                 headers: {
                     "Content-Type": "application/json",
-                    Authorization: token,
+                    Authorization: "123456",
                 },
             })
             .then((response) => {
@@ -151,7 +151,12 @@ function CreateTodoForm() {
                 }
                 if (response.status === 200) {
                     history.push("/todos");
+                    return;
                 }
+                {
+                    /**if user token isn't valid set message to notice that */
+                }
+
                 {
                     /**if process failed, show message to tell that */
                 }
@@ -160,6 +165,12 @@ function CreateTodoForm() {
             .catch((error) => {
                 {
                     /**store some error in this process */
+                }
+                if (error.response) {
+                    if (error.response.status === 401) {
+                        authCtx.logout();
+                        history.push("/login");
+                    }
                 }
                 setMessage(error.message);
             })

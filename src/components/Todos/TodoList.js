@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, Fragment } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
 
 import Card from "../UI/Card/Card";
@@ -76,9 +76,9 @@ const TodoList = () => {
     }, []);
 
     return (
-        <Fragment>
+        <Card>
             {message && <p>{message}</p>}
-            {isLoading && <p>Loading Todo Lists]...</p>}
+            {isLoading && <p>Loading Todo Lists...</p>}
             {!isLoading && todos.length === 0 && <p>No todos.</p>}
             {!isLoading && todos.length > 0 && (
                 <ul className={classes["todos-list"]}>
@@ -92,7 +92,7 @@ const TodoList = () => {
                     ))}
                 </ul>
             )}
-        </Fragment>
+        </Card>
     );
 };
 
