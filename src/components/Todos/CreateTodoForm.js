@@ -142,7 +142,7 @@ function CreateTodoForm() {
             .post(createAPI, newTodo, {
                 headers: {
                     "Content-Type": "application/json",
-                    Authorization: "123456",
+                    Authorization: token,
                 },
             })
             .then((response) => {

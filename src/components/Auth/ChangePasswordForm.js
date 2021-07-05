@@ -69,7 +69,7 @@ const ChangePasswordForm = () => {
                 {
                     headers: {
                         "Content-Type": "application/json",
-                        Authorization: "123456",
+                        Authorization: token,
                     },
                 }
             )
